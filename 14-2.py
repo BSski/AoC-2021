@@ -7,10 +7,15 @@ common element in the result string of 40 steps of polymerization.
 import time
 from collections import Counter
 from functools import lru_cache
+from typing import Callable, ParamSpec, TypeVar
 
 
-def time_it(func):
-    def _wrap(*args, **kwargs):
+P = ParamSpec("P")
+R = TypeVar("R")
+
+
+def time_it(func: Callable[P, R]) -> Callable[P, R]:
+    def _wrap(*args: P.args, **kwargs: P.kwargs) -> R:
         start_time = time.perf_counter()
         result = func(*args, **kwargs)
         end_time = time.perf_counter()
@@ -28,6 +33,7 @@ def get_input_list_from_file(input_name: str) -> tuple[str, dict[str, str]]:
         input_list = input_list[2:]
         input_list = list(map(lambda a: a.strip("\n"), input_list))
         input_list = list(map(lambda a: a.split(" -> "), input_list))
+
         insertion_rules = dict(input_list)
 
         return polymer_template, insertion_rules
