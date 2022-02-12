@@ -29,13 +29,10 @@ def get_input_list_from_file(input_name: str) -> tuple[str, dict[str, str]]:
     with open(input_name, "r") as input_:
         input_list = list(input_)
         polymer_template = input_list[0].strip("\n")
-
         input_list = input_list[2:]
         input_list = list(map(lambda a: a.strip("\n"), input_list))
         input_list = list(map(lambda a: a.split(" -> "), input_list))
-
         insertion_rules = dict(input_list)
-
         return polymer_template, insertion_rules
 
 
