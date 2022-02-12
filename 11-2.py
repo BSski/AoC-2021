@@ -4,10 +4,14 @@ https://adventofcode.com/2021/day/11
 Finds the number of steps until total flash synchronization.
 """
 import time
+from typing import Callable, ParamSpec, TypeVar
 
 
-def time_it(func):
-    def _wrap(*args, **kwargs):
+P = ParamSpec("P")
+R = TypeVar("R")
+
+def time_it(func: Callable[P, R]) -> Callable[P, R]:
+    def _wrap(*args: P.args, **kwargs: P.kwargs) -> R:
         start_time = time.perf_counter()
         result = func(*args, **kwargs)
         end_time = time.perf_counter()
