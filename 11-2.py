@@ -1,7 +1,7 @@
 """
 2021: Day 11, part two.
 https://adventofcode.com/2021/day/11
-Finds number of steps until total flash synchronization.
+Finds the number of steps until total flash synchronization.
 """
 import time
 
