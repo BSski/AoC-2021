@@ -2,7 +2,7 @@
 2021: Day 14, part two.
 https://adventofcode.com/2021/day/14
 Finds quantity of the most common element minus the quantity of the least
-common element in the 40 step's result string.
+common element in the result string of 40 steps of polymerization.
 """
 import time
 from collections import Counter
