@@ -70,6 +70,6 @@ def calculate_solution(input_name: str) -> int:
 
 if __name__ == "__main__":
     print(
-        "The most common element minus the least common element: ",
+        "The most common element minus the least common element:",
         calculate_solution("14 input.txt"),
     )
