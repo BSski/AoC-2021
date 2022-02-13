@@ -1,2 +1,3 @@
 # AoC-2021
-Selected Advent of Code 2021 Python solutions.
+
+<p align="center">Selected Advent of Code 2021 Python solutions.</p>
