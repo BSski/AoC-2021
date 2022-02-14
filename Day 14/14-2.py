@@ -13,7 +13,6 @@ from typing import Callable, ParamSpec, TypeVar
 P = ParamSpec("P")
 R = TypeVar("R")
 
-
 def time_it(func: Callable[P, R]) -> Callable[P, R]:
     def _wrap(*args: P.args, **kwargs: P.kwargs) -> R:
         start_time = time.perf_counter()
